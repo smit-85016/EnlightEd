@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+        }
+
+        .feedback-container {
+            max-width: 400px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 20px;
+            /* padding-right: 40px; */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .star-rating {
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star:hover,
+        .star:hover~.star {
+            color: #ff9800;
+        }
+
+        .star.selected {
+            color: #ff9800;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #thank-you {
+            margin-top: 20px;
+            color: #4caf50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="feedback-container">
+        <h1>Feedback Form</h1>
+        <p>We value your feedback! Please rate your experience:</p>
+
+        <textarea id="feedback" placeholder="Write your feedback here..."></textarea>
+        <button id="submit-btn">Submit</button>
+        <p id="thank-you" style="display: none;">Thank you for your feedback!</p>
+    </div>
+    <script>
+
+
+        const feedback = document.getElementById('feedback');
+        const submitBtn = document.getElementById('submit-btn');
+        const thankYouMsg = document.getElementById('thank-you');
+
+
+
+        submitBtn.addEventListener('click', () => {
+            thankYouMsg.style.display = 'block';
+            feedback.value = '';
+
+        });
+    </script>
+</body>
+
+</html>

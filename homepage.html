@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Home Page</title>
+
+
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body style="position: absolute;">
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <a href="homepage.html">
+                <img src="images/l-removebg.png" alt="Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropdown-button">demo course</button>
+                        <div class="dropdown-content">
+                            <a href="web-tech.html">web-tech</a>
+                            <a href="os.html">OS</a>
+                            <a href="cn.html">CN</a>
+                            <a href="ai.html">A.I.</a>
+                            <a href="Maths.html">Probability & Statistics</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="quizhome.html">Quiz</a></li>
+                <li><a href="Profile.html">About-Us</a></li>
+                <li><a href="courses.html">Purchase course</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fadeInUp">
+        <div class="hero-content">
+            <h2>Welcome to EnlightEd Learning</h2>
+            <p>Where creativity meets functionality.</p>
+            <button id="discoverBtn">Discover More</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <div id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Web Design</h3>
+                <p>Beautiful, responsive websites designed to engage users.</p>
+            </div>
+            <div class="service-item">
+                <h3>Graphic Design</h3>
+                <p>Creating memorable logos, branding, and print designs.</p>
+            </div>
+            <div class="service-item">
+                <h3>UX/UI Design</h3>
+                <p>Crafting intuitive and user-friendly interfaces.</p>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <h2>Popular Topics to Explore</h2>
+        <div class="topics-grid">
+            <div class="topic" data-topic="Microsoft Excel">
+                <img src="./images/cat1.png" alt="Microsoft Excel">
+                <p>Microsoft Excel</p>
+            </div>
+            <div class="topic" data-topic="AWS">
+                <img src="./images/cat2.png" alt="AWS">
+                <p>AWS</p>
+            </div>
+            <div class="topic" data-topic="Python">
+                <img src="./images/cat3.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="topic" data-topic="Java">
+                <img src="./images/cat4.png" alt="Java">
+                <p>Java</p>
+            </div>
+            <div class="topic" data-topic="Web Design">
+                <img src="./images/cat5.png" alt="Web Design">
+                <p>Web Design</p>
+            </div>
+            <div class="topic" data-topic="Web Development">
+                <img src="./images/cat6.png" alt="Web Development">
+                <p>Web Development</p>
+            </div>
+            <div class="topic" data-topic="MySQL">
+                <img src="./images/cat7.png" alt="MySQL">
+                <p>MySQL</p>
+            </div>
+            <div class="topic" data-topic="UI/UX Design">
+                <img src="./images/cat8.png" alt="UI/UX Design">
+                <p>UI/UX Design</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a team of innovative designers creating visually stunning and user-friendly designs for brands,
+            businesses, and personal projects.</p>
+    </section>
+    <!-- <-- Team Menmbers -->
+    <div id="members">
+
+        <div id="displayover">
+
+            <a href="Profile.html""<p id="view">View
+                </p></a>
+        </div>
+
+        <iframe src="Profile.html" scrolling="no" height="100%"></iframe>
+    </div>
+    <div class="feedback" style="height: 500px">
+        <iframe src="feedback.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+
+    </div>
+
+
+
+
+    <!-- Footer Section -->
+    <footer id="contact" style="position: relative;">
+        <p>Contact us at: info@EnlightEdLearning.com</p>
+        <p>© 2024 EnlightEd Learning</p>
+    </footer>
+
+    <script>
+        function course() {
+            const button = document.getElementById("discoverBtn");
+            window.location.href = "courses.html";
+
+        }
+    </script>
+</body>
+
+</html>

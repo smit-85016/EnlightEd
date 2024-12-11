@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Time User Guide</title>
+    <style>
+        /* Basic page styles */
+body {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    z-index: 6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 70%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Highlight the section */
+.highlight {
+    background-color: #ffffcc;
+    border: 2px solid #f0e68c;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+    </style>
+</head>
+<body>
+    <!-- First-time User Guide Modal -->
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome! Let's Get Started</h2>
+            <div id="guideSteps">
+                <!-- Steps will be inserted dynamically by JS -->
+            </div>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Simulate first-time login flag
+    const isFirstLogin = true;  // This should come from the server-side
+
+    if (isFirstLogin) {
+        const modal = document.getElementById('guideModal');
+        const guideStepsContainer = document.getElementById('guideSteps');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const guideSteps = [
+            {
+                title: "Welcome!",
+                content: "Thank you for joining us! Let's start the tour..!.",
+                highlightElement: '.navigation'  // Example of highlighted area
+            },
+            {
+                title: "Step 1: Your Courses",
+                content: "Click on your course icon to see your Courses.",
+                highlightElement: '#course'  // Replace with actual profile icon element
+            },
+            {
+                title: "Step 2: Discover",
+                content: "You can purchase and add new courses ,which you like.",
+                highlightElement: '#discover'  // Replace with actual dashboard section ID
+            },
+            {
+                title: "Step 3: Quize",
+                content: "Here you will get Quizes to test your knowledge ",
+                highlightElement: '#quize'  // Replace with actual tutorial section ID
+            },
+            {
+                title: "You're All Set!",
+                content: "Great! You're all set to start using the EnlightEd. Enjoy!",
+                highlightElement: '#homepage'  // Reset highlight to content area
+            }
+        ];
+
+        let currentStep = 0;
+
+        // Function to update the modal content
+        function showStep(stepIndex) {
+            const step = guideSteps[stepIndex];
+            guideStepsContainer.innerHTML = `
+                <h3>${step.title}</h3>
+                <p>${step.content}</p>
+            `;
+            highlightSection(step.highlightElement);
+        }
+
+        // Function to highlight sections
+        function highlightSection(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.classList.add('highlight');
+            }
+        }
+
+        // Show the first step
+        showStep(currentStep);
+
+        // Handle next button click
+        nextBtn.addEventListener('click', function () {
+            currentStep++;
+            if (currentStep < guideSteps.length) {
+                showStep(currentStep);
+            } else {
+                modal.style.display = 'none';  // Close modal when all steps are done
+            }
+        });
+
+        // Show the modal
+        modal.style.display = 'block';
+    }
+});
+    </script>
+</body>
+</html>
+
